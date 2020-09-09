@@ -6,16 +6,6 @@
       "id": 1
     },
     {
-      "name": "Ольга",
-      "number": "550370",
-      "id": 2
-    },
-    {
-      "name": "3399",
-      "number": "123-123",
-      "id": 3
-    },
-    {
       "name": "Serhii",
       "number": "550370",
       "id": 4
@@ -24,6 +14,11 @@
       "name": "Rosie Simpson",
       "number": "550-370",
       "id": 5
+    },
+    {
+      "name": "Serhii",
+      "number": "450-59089709",
+      "id": 6
     }
   ]
 }
