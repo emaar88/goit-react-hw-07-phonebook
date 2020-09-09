@@ -23,12 +23,12 @@ const fetchContacts = () => (dispatch) => {
 };
 
 const removeContact = (id) => (dispatch) => {
-  dispatch(contactsActions.removeContactRequest());
+  dispatch(contactsActions.deleteContactRequest());
 
   axios
     .delete(`/contacts/${id}`)
-    .then(() => dispatch(contactsActions.removeContactRequest(id)))
-    .catch((error) => dispatch(contactsActions.removeContactError(error)));
+    .then(() => dispatch(contactsActions.deleteContactSuccess(id)))
+    .catch((error) => dispatch(contactsActions.deleteContactError(error)));
 };
 
 export default {

@@ -17,8 +17,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1 className={classes.titleName}>Phonebook</h1>
         {this.props.isLoadingTasks && <Loader />}
+        <h1 className={classes.titleName}>Phonebook</h1>
+
         <ContactForm />
         <h2 className={classes.minTitleName}>Contacts</h2>
         <Filter />

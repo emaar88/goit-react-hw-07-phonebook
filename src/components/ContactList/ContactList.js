@@ -13,13 +13,7 @@ const ContactList = ({ contacts }) => (
       {contacts.length > 0 ? (
         contacts.map(({ id }) => (
           <li className={classes.li} key={id}>
-            <Contact
-              // name={name}
-              // number={number}
-              // onDeleteContact={() => onDeleteContact(id)}
-              //
-              id={id}
-            />
+            <Contact id={id} />
           </li>
         ))
       ) : (

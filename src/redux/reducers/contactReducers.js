@@ -3,13 +3,15 @@ import { createReducer } from "@reduxjs/toolkit";
 import contactsActions from "../actions/contactActions";
 
 const addContact = (state, action) => [...state, action.payload];
-const deleteContactForList = (state, action) =>
+// const addContact = (state, action) =>
+//   state.some((contact) => contact.name.toLowerCase() !== action.payload);
+const deleteContact = (state, action) =>
   state.filter((contact) => contact.id !== action.payload);
 
 const items = createReducer([], {
   [contactsActions.fetchContactsSuccess]: (state, action) => action.payload,
-  [contactsActions.addContactsSuccess]: addContact,
-  [contactsActions.deleteContact]: deleteContactForList,
+  [contactsActions.addContactSuccess]: addContact,
+  [contactsActions.deleteContactSuccess]: deleteContact,
 });
 const filter = createReducer("", {
   [contactsActions.onRename]: (state, action) => action.payload,

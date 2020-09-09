@@ -10,9 +10,9 @@ const fetchContactsRequest = createAction("contacts/fetchRequest");
 const fetchContactsSuccess = createAction("contacts/fetchSuccess");
 const fetchContactsError = createAction("contacts/fetchError");
 
-const removeContactRequest = createAction("contacts/removeRequest");
-const removeContactSuccess = createAction("contacts/removeSuccess");
-const removeContactError = createAction("contacts/removeError");
+const deleteContactRequest = createAction("contacts/removeRequest");
+const deleteContactSuccess = createAction("contacts/removeSuccess");
+const deleteContactError = createAction("contacts/removeError");
 
 const onRename = createAction("contacts/onRename");
 
@@ -23,8 +23,8 @@ export default {
   fetchContactsRequest,
   fetchContactsSuccess,
   fetchContactsError,
-  removeContactRequest,
-  removeContactSuccess,
-  removeContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
   onRename,
 };

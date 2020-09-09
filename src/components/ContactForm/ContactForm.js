@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import classes from "./ContactForm.module.css";
 import { connect } from "react-redux";
 // import contactsActions from "../../redux/actions/contactActions";
-import contactsSelectors from "../../redux/selectors/contactAsync";
+import contactAsync from "../../redux/selectors/contactAsync";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Button from "react-bootstrap/Button";
 
@@ -23,10 +25,42 @@ class ContactForm extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.props.onAddContact(this.state.name, this.state.number));
-    if (this.state.name !== "" && this.state.number !== "") {
+    if (this.state.name === "" && this.state.number === "") {
+      toast.error(`Введено пустое значение!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else if (this.state.name.length < 3) {
+      toast.error(`Введено слишком короткое имя!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else if (this.state.number.length < 6) {
+      toast.error(`Введен слишком короткий номер телефона!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else {
       this.props.onAddContact(this.state.name, this.state.number);
-    } else alert("Введено пустое значение!");
+    }
 
     this.resetForm();
   };
@@ -61,6 +95,7 @@ class ContactForm extends Component {
               onChange={this.handleChange}
             />
           </label>
+          <ToastContainer />
           <Button variant="primary" type="submit" size="lg" block>
             Add Contact
           </Button>
@@ -71,6 +106,6 @@ class ContactForm extends Component {
 }
 
 const mapDispatchToProps = {
-  onAddContact: contactsSelectors.addContact,
+  onAddContact: contactAsync.addContact,
 };
 export default connect(null, mapDispatchToProps)(ContactForm);
