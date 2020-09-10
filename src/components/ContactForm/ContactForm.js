@@ -28,6 +28,15 @@ class ContactForm extends Component {
     const name = e.target.name;
     const value = e.target.value;
     if (Number.isNaN(Number(value))) {
+      toast.error(`Введите пожалуйста цифры`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     } else {
       this.setState({
@@ -68,7 +77,7 @@ class ContactForm extends Component {
       });
       return;
     } else if (this.state.name.length < 3) {
-      toast.error(`Введено слишком короткое имя!`, {
+      toast.error(`Введено слишком короткое имя! Не меньше 3 символов`, {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -79,7 +88,7 @@ class ContactForm extends Component {
       });
       return;
     } else if (this.state.name.length > 40) {
-      toast.error(`Введено слишком длинное имя!`, {
+      toast.error(`Введено слишком длинное имя! Не больше 40 символов`, {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -90,7 +99,7 @@ class ContactForm extends Component {
       });
       return;
     } else if (this.state.number.length < 6) {
-      toast.error(`Введен слишком короткий номер телефона!`, {
+      toast.error(`Введен слишком короткий номер телефона! Не меньше 6 цифр`, {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -101,7 +110,7 @@ class ContactForm extends Component {
       });
       return;
     } else if (this.state.number.length > 12) {
-      toast.error(`Введен слишком длинный номер телефона!`, {
+      toast.error(`Введен слишком длинный номер телефона! Не больше 12 цифр`, {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
