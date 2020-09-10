@@ -78,8 +78,30 @@ class ContactForm extends Component {
         progress: undefined,
       });
       return;
+    } else if (this.state.name.length > 40) {
+      toast.error(`Введено слишком длинное имя!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
     } else if (this.state.number.length < 6) {
       toast.error(`Введен слишком короткий номер телефона!`, {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else if (this.state.number.length > 12) {
+      toast.error(`Введен слишком длинный номер телефона!`, {
         position: "top-right",
         autoClose: 2500,
         hideProgressBar: false,
@@ -128,6 +150,15 @@ class ContactForm extends Component {
           <ToastContainer />
           <Button variant="primary" type="submit" size="lg" block>
             Add Contact
+          </Button>
+          <Button
+            variant="success"
+            type="button"
+            onClick={this.resetForm}
+            size="lg"
+            block
+          >
+            Reset
           </Button>
         </form>
       </div>
