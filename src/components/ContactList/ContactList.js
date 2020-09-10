@@ -1,11 +1,9 @@
 import React from "react";
 import Contact from "../Contact/";
-// import contactsActions from "../../redux/actions/contactActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classes from "./ContactList.module.css";
 import contactSelectors from "../../redux/selectors/contactSelectors";
-import Loader from "../Loader";
 
 const ContactList = ({ contacts }) => (
   <div className={classes.container}>

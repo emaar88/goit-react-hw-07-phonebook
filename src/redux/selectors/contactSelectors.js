@@ -21,6 +21,7 @@ const getContactById = (state, contactId) => {
 };
 
 export default {
+  getContacts,
   getLoading,
   getFilter,
   getVisibleContacts,

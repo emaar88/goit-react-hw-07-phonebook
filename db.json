@@ -1,29 +1,14 @@
 {
   "contacts": [
     {
-      "name": "Rosie Simpson",
-      "number": "123-123",
-      "id": 1
+      "name": "Joker",
+      "number": "232335554433",
+      "id": 10
     },
     {
-      "name": "Serhii",
-      "number": "550370",
-      "id": 4
-    },
-    {
-      "name": "Serhiijh",
-      "number": "450-5908989",
-      "id": 7
-    },
-    {
-      "name": "Кальвин",
-      "number": "569-093",
-      "id": 8
-    },
-    {
-      "name": "Serhiij",
-      "number": "458-789",
-      "id": 9
+      "name": "Ольга",
+      "number": "567678",
+      "id": 11
     }
   ]
 }
