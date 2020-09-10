@@ -1,14 +1,13 @@
 import axios from "axios";
 import contactsActions from "../actions/contactActions";
 
-axios.defaults.baseURL = "http://localhost:2000";
+axios.defaults.baseURL = "http://localhost:3000";
 
 const addContact = (name, number) => (dispatch) => {
   dispatch(contactsActions.addContactRequest());
   axios
     .post("/contacts", { name, number })
     .then(({ data }) => {
-      //   console.log(responce);
       dispatch(contactsActions.addContactSuccess(data));
     })
     .catch((error) => dispatch(contactsActions.addContactError(error)));

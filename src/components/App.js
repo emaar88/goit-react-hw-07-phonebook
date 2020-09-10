@@ -11,7 +11,6 @@ import contactSelectors from "../redux/selectors/contactSelectors";
 
 class App extends Component {
   componentDidMount() {
-    //fetch fetchTasks
     this.props.onFetchContacts();
   }
   render() {

@@ -1,5 +1,3 @@
-// import { ADD_CONTACT, DELETE_CONTACT } from "../types";
-// import { v4 as uuidv4 } from "uuid";
 import { createAction } from "@reduxjs/toolkit";
 
 const addContactRequest = createAction("contacts/addRequest");

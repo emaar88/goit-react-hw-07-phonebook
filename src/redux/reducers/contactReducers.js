@@ -3,8 +3,6 @@ import { createReducer } from "@reduxjs/toolkit";
 import contactsActions from "../actions/contactActions";
 
 const addContact = (state, action) => [...state, action.payload];
-// const addContact = (state, action) =>
-//   state.some((contact) => contact.name.toLowerCase() !== action.payload);
 const deleteContact = (state, action) =>
   state.filter((contact) => contact.id !== action.payload);
 
